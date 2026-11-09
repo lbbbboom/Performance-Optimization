@@ -17,6 +17,10 @@
 
 ![实验室数据与真实用户数据的差距](images/charts/field-vs-lab.png)
 
+## 网页版：指标优化教程
+
+[`web/metrics-guide.html`](web/metrics-guide.html) 是一个可离线打开的单页网页（下载后双击即可）：按 LCP、INP、CLS、FCP、TTFB、TBT、SI 逐项讲解怎么看、常见原因、Shopify 修复方法，并附 24 篇精选外部教程。源文件为 `web/metrics-guide.body.html`。
+
 ## 目录
 
 | 章节 | 你会学到 |

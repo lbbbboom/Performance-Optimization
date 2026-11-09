@@ -41,7 +41,7 @@
 
 | 阶段 | 含义 | 偏大时的常见 Shopify 原因 | 修复方向 |
 | --- | --- | --- | --- |
-| **TTFB** | 请求到 HTML 第一个字节 | Liquid 渲染慢（嵌套循环遍历大集合、过多 `all_products`、复杂 section）、重定向链、地理跳转 App | 简化 Liquid；用 [Shopify Theme Inspector](https://github.com/Shopify/shopify-theme-inspector-for-chrome) 看 Liquid 火焰图；避免首屏重定向 |
+| **TTFB** | 请求到 HTML 第一个字节 | Liquid 渲染慢（嵌套循环遍历大集合、过多 `all_products`、复杂 section）、重定向链、地理跳转 App | 简化 Liquid；用 [Shopify Theme Inspector](https://github.com/Shopify/shopify-theme-inspector) 看 Liquid 火焰图；避免首屏重定向 |
 | **Resource load delay** | HTML 开始到 LCP 资源**开始下载**的间隔 | LCP 图片被懒加载或由 JS 插入；被 CSS 背景图引用；前面的 HTML 太大导致图片标签到得晚；和大量高优先级请求抢带宽 | 让 LCP 图片在 HTML 前部以 `<img>` 出现；`loading="eager"` + `fetchpriority="high"`；**只给 LCP 一个资源高优先级**；减小 HTML |
 | **Resource load duration** | LCP 资源本身的下载时间 | 图片过大、未按设备尺寸给 `srcset`、PNG/GIF | `image_url` 指定 `width`、正确 `sizes`、Shopify CDN 自动 WebP/AVIF |
 | **Element render delay** | 资源下载完到真正画出来 | 渲染阻塞 CSS/JS 未完成、轮播组件 JS 初始化后才显示首图、淡入动画、字体阻塞 | 减少渲染阻塞资源；首张幻灯片不依赖 JS 显示；去掉首屏入场动画 |
@@ -92,7 +92,7 @@
 | Chrome DevTools → **Performance** 面板 | 录制加载过程和**交互过程**（诊断 INP 必用）；看 LCP 元素、长任务、布局偏移 |
 | Chrome DevTools → **Network** 面板 | 按 Priority 列查看请求优先级；Block request URL 可模拟“去掉某个 App 后的效果” |
 | Chrome DevTools → **Coverage** 面板 | 查看 CSS/JS 未使用比例 |
-| [Shopify Theme Inspector](https://github.com/Shopify/shopify-theme-inspector-for-chrome) | Liquid 渲染火焰图，定位 TTFB 慢的 section |
+| [Shopify Theme Inspector](https://github.com/Shopify/shopify-theme-inspector) | Liquid 渲染火焰图，定位 TTFB 慢的 section |
 | [web-vitals](https://github.com/GoogleChrome/web-vitals) JS 库 | 采集真实用户数据，含 INP 归因（attribution build） |
 | [CrUX Vis](https://cruxvis.withgoogle.com/) / CrUX API | 查看真实用户数据的历史趋势 |
 | 本仓库 [scripts/](../scripts) | 从 Lighthouse JSON 提取诊断；统计 Shopify HTML 体积构成 |

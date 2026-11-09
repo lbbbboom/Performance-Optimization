@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="Devin artifact kit" />
+    <title>Artifact</title>
+    <script>
+      // A network that blocks the kit's host (or hands back a block page for it) leaves the page blank; say so instead. Styled like the
+      // ds error alert card (ChatAlertCard variant="error", no bar), values hardcoded: the kit CSS is what failed.
+      function artifactKitFailed() {
+        function show() {
+          if (document.getElementById("artifact-kit-notice")) return;
+          document.documentElement.style.colorScheme = "light";
+          var notice = document.createElement("div");
+          notice.id = "artifact-kit-notice";
+          notice.setAttribute("role", "alert");
+          notice.style.cssText =
+            "box-sizing:border-box;display:flex;align-items:flex-start;gap:6px;max-width:960px;margin:0 auto;padding:32px 24px 0;" +
+            "font:13px/18px Inter,ui-sans-serif,system-ui,sans-serif;letter-spacing:-0.005em;color:rgb(25 25 25)";
+          var ns = "http://www.w3.org/2000/svg";
+          var icon = document.createElementNS(ns, "svg");
+          icon.setAttribute("viewBox", "0 0 24 24");
+          icon.setAttribute("fill", "rgb(245 59 58)");
+          icon.setAttribute("aria-hidden", "true");
+          icon.style.cssText = "width:14px;height:14px;flex-shrink:0;margin-top:2px";
+          var path = document.createElementNS(ns, "path");
+          path.setAttribute("fill-rule", "evenodd");
+          path.setAttribute("clip-rule", "evenodd");
+          path.setAttribute(
+            "d",
+            "M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM12 15C11.4477 15 11 15.4477 11 16C11 16.5523 11.4477 17 12 17C12.5523 17 13 16.5523 13 16C13 15.4477 12.5523 15 12 15ZM12 7C11.5858 7 11.25 7.33579 11.25 7.75V12.25C11.25 12.6642 11.5858 13 12 13C12.4142 13 12.75 12.6642 12.75 12.25V7.75C12.75 7.33579 12.4142 7 12 7Z"
+          );
+          icon.appendChild(path);
+          var text = document.createElement("span");
+          text.textContent = "This page could not load Devin's artifact kit.";
+          notice.appendChild(icon);
+          notice.appendChild(text);
+          document.body.prepend(notice);
+        }
+        if (document.body) show();
+        else document.addEventListener("DOMContentLoaded", show);
+      }
+    </script>
+    <link rel="stylesheet" href="https://static.devin.ai/artifact-kit/7088248ad1842d99/ds-kit.css" onerror="artifactKitFailed()" />
+    <style>
+    .mt-2 {
+        margin-top: 0.5rem
+    }
+    .block {
+        display: block
+    }
+    .flex {
+        display: flex
+    }
+    .grid {
+        display: grid
+    }
+    .list-decimal {
+        list-style-type: decimal
+    }
+    .list-disc {
+        list-style-type: disc
+    }
+    .flex-col {
+        flex-direction: column
+    }
+    .flex-wrap {
+        flex-wrap: wrap
+    }
+    .items-center {
+        align-items: center
+    }
+    .gap-1 {
+        gap: 0.25rem
+    }
+    .gap-2 {
+        gap: 0.5rem
+    }
+    .gap-3 {
+        gap: 0.75rem
+    }
+    .gap-4 {
+        gap: 1rem
+    }
+    .gap-6 {
+        gap: 1.5rem
+    }
+    .pl-5 {
+        padding-left: 1.25rem
+    }
+    .pt-4 {
+        padding-top: 1rem
+    }
+    .text-sm {
+        font-size: calc(0.875rem * var(--text-scale, 1));
+        line-height: calc(1.25rem * var(--text-scale, 1))
+    }
+    .font-medium {
+        font-weight: 500
+    }
+    .text-green {
+        color: rgb(var(--text-green))
+    }
+    .text-red {
+        color: rgb(var(--text-red))
+    }
+    .text-secondary {
+        color: rgb(var(--text-secondary))
+    }
+    .filter {
+        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
+    }
+    @keyframes enter {
+        from {
+            opacity: var(--tw-enter-opacity, 1);
+            transform: translate3d(var(--tw-enter-translate-x, 0), var(--tw-enter-translate-y, 0), 0) scale3d(var(--tw-enter-scale, 1), var(--tw-enter-scale, 1), var(--tw-enter-scale, 1)) rotate(var(--tw-enter-rotate, 0))
+        }
+    }
+    @keyframes exit {
+        to {
+            opacity: var(--tw-exit-opacity, 1);
+            transform: translate3d(var(--tw-exit-translate-x, 0), var(--tw-exit-translate-y, 0), 0) scale3d(var(--tw-exit-scale, 1), var(--tw-exit-scale, 1), var(--tw-exit-scale, 1)) rotate(var(--tw-exit-rotate, 0))
+        }
+    }
+    @media (min-width: 768px) {
+        .md\:grid-cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr))
+        }
+    }
+    </style>
+  </head>
+  <body>
+    <script src="https://static.devin.ai/artifact-kit/7088248ad1842d99/ds-kit.js" onerror="artifactKitFailed()"></script>
+    <script>
+      if (!window.DS) artifactKitFailed();
+    </script>
+    <main data-artifact-shell class="mx-auto flex max-w-[960px] flex-col gap-6 px-6 py-8">
+<div id="root"></div>
+<script>DSRun("\nconst M = [\n {id:\"LCP\",name:\"Largest Contentful Paint 最大内容绘制\",cwv:true,good:\"≤ 2.5 s\",poor:\"> 4 s\",weight:\"25%\",\n  what:\"视口内最大的图片或文字块渲染完成的时间，回答“主内容出来了吗”。\",\n  diagnose:[\"PSI → LCP breakdown：看 TTFB / Resource load delay / Resource load duration / Element render delay 哪段最大\",\"PSI → LCP request discovery：三项（未懒加载、fetchpriority=high、HTML 可发现）是否全绿\",\"DevTools Performance：Timings 轨道的 LCP 标记，确认 LCP 元素\"],\n  causes:[[\"Load delay 大\",\"LCP 图懒加载 / 由 JS 插入 / CSS 背景图；HTML 过大，图片标签到得晚；太多资源抢 high 优先级（TORRAS：4.9 MB HTML、8 个 high）\"],[\"Load duration 大\",\"图片过大、srcset/sizes 写错、PNG/GIF\"],[\"Render delay 大\",\"渲染阻塞 CSS、轮播 JS 初始化后才显示首图、入场动画（ReVive：4 个阻塞 CSS，760 ms）\"],[\"TTFB 大\",\"Liquid 渲染慢、重定向、地理跳转\"]],\n  fixes:[\"首屏图用 image_tag 输出 loading:'eager' + fetchpriority:'high'，全页只此一个\",\"其它图片 loading:'lazy'，不写 high\",\"移动/桌面不同图用 <picture><source media>\",\"首屏视频：封面图做 LCP，视频 preload=none、load 后再加载、≤ 1 MB\",\"关键 CSS 内联，其余 preload + onload 异步\",\"把 App 内联的大段配置移出 <head>\"],\n  code:\"{{ section.settings.image\\n  | image_url: width: 1500\\n  | image_tag: loading: 'eager', fetchpriority: 'high',\\n      widths: '375, 750, 1100, 1500', sizes: '100vw' }}\",\n  links:[[\"Optimize LCP（web.dev）\",\"https://web.dev/articles/optimize-lcp\"],[\"LCP 指标说明\",\"https://web.dev/articles/lcp\"],[\"Fetch Priority API\",\"https://web.dev/articles/fetch-priority\"],[\"LCP subparts 详解（DebugBear）\",\"https://www.debugbear.com/blog/lcp-subparts\"],[\"Shopify image_tag 文档\",\"https://shopify.dev/docs/api/liquid/filters/image_tag\"]]},\n {id:\"INP\",name:\"Interaction to Next Paint 交互到下一次绘制\",cwv:true,good:\"≤ 200 ms\",poor:\"> 500 ms\",weight:\"不计分（仅 Field）\",\n  what:\"用户点击、触摸、按键后到下一帧画面的延迟，取访问中最慢的那类交互。实验室无法直接测量，TBT 只是加载阶段的近似。\",\n  diagnose:[\"PSI Field 数据看 INP（TORRAS 移动端 219 ms 不达标，而 Lab TBT 仅 10 ms）\",\"DevTools Performance 开 CPU 4x 降速，录制菜单/加购/购物车抽屉等交互，看 Input delay / Processing / Presentation 三段\",\"上线 web-vitals attribution 采集真实用户最慢交互的元素与脚本\"],\n  causes:[[\"Input delay 大\",\"主线程正被其它脚本占用，尤其“首次交互才加载”的 App 一起执行\"],[\"Processing 大\",\"事件处理函数做了太多同步工作（埋点、重渲染、请求）\"],[\"Presentation 大\",\"DOM 过大（TORRAS 6,744 节点）、给 header/body 切换类名引发大范围样式重算\"]],\n  fixes:[\"先给反馈，再 await scheduler.yield() 让出主线程，最后做重活\",\"菜单/购物车抽屉/国家选择器用 Section Rendering API 按需渲染，缩小 DOM\",\"能用 CSS（:hover、details[open]）实现的交互不用 JS\",\"第三方脚本在空闲时错峰加载，不要全部绑在首次交互上\",\"首屏以下大区块使用 content-visibility: auto\"],\n  code:\"const yieldToMain = () => globalThis.scheduler?.yield\\n  ? scheduler.yield() : new Promise(r => setTimeout(r, 0));\\nbtn.addEventListener('click', async () => {\\n  btn.classList.add('is-loading');\\n  await yieldToMain();\\n  await addToCart();\\n});\",\n  links:[[\"Optimize INP（web.dev）\",\"https://web.dev/articles/optimize-inp\"],[\"INP 指标说明\",\"https://web.dev/articles/inp\"],[\"在真实用户中找到慢交互\",\"https://web.dev/articles/find-slow-interactions-in-the-field\"],[\"DOM 大小与交互性\",\"https://web.dev/articles/dom-size-and-interactivity\"],[\"优化长任务\",\"https://web.dev/articles/optimize-long-tasks\"],[\"web-vitals 库\",\"https://github.com/GoogleChrome/web-vitals\"]]},\n {id:\"CLS\",name:\"Cumulative Layout Shift 累积布局偏移\",cwv:true,good:\"≤ 0.1\",poor:\"> 0.25\",weight:\"25%\",\n  what:\"页面元素意外移动的程度，回答“页面会跳吗”。\",\n  diagnose:[\"PSI → Layout shift culprits：列出发生偏移的元素和原因\",\"DevTools Performance → Layout shifts 轨道\",\"DevTools Rendering 面板勾选 Layout Shift Regions\"],\n  causes:[[\"媒体无尺寸\",\"<img>/<video>/<iframe> 缺少 width/height 或 aspect-ratio\"],[\"动态插入内容\",\"公告条、评价星级、弹窗、App block 加载后把内容往下推\"],[\"字体切换\",\"Web 字体替换回退字体导致文字重排\"]],\n  fixes:[\"使用 image_tag（自动输出 width/height）\",\"视频、iframe、App 容器用 aspect-ratio 或 min-height 占位\",\"JS 插入的内容预留同样高度\",\"回退字体配合 size-adjust 减小差异\"],\n  code:\".hero-video { aspect-ratio: 9 / 16; }\\n@media (min-width: 750px) { .hero-video { aspect-ratio: 16 / 9; } }\",\n  links:[[\"Optimize CLS（web.dev）\",\"https://web.dev/articles/optimize-cls\"],[\"CLS 指标说明\",\"https://web.dev/articles/cls\"],[\"字体最佳实践\",\"https://web.dev/articles/font-best-practices\"]]},\n {id:\"FCP\",name:\"First Contentful Paint 首次内容绘制\",cwv:false,good:\"≤ 1.8 s\",poor:\"> 3 s\",weight:\"10%\",\n  what:\"第一个文字或图片出现在屏幕上的时间。\",\n  diagnose:[\"PSI → Render-blocking requests、Network dependency tree\",\"PSI → Font display\"],\n  causes:[[\"渲染阻塞\",\"同步 CSS/JS 太多（TORRAS 7 个阻塞 CSS）\"],[\"请求链长\",\"HTML → CSS → 字体 的多级链（ReVive 的 Yotpo 字体链 4,758 ms）\"],[\"HTML 大\",\"首字节后要下载很多字节才能开始渲染\"]],\n  fixes:[\"关键 CSS 内联，非关键 CSS 异步\",\"字体 font-display: swap，只预加载 1–2 个首屏字体\",\"preconnect 最多 4 个首屏必需域名\",\"第三方组件字体移出关键路径\"],\n  code:\"<link rel=\\\"preload\\\" href=\\\"{{ 'theme.css' | asset_url }}\\\" as=\\\"style\\\"\\n      onload=\\\"this.onload=null;this.rel='stylesheet'\\\">\",\n  links:[[\"FCP 指标说明\",\"https://web.dev/articles/fcp\"],[\"提取关键 CSS\",\"https://web.dev/articles/extract-critical-css\"],[\"字体最佳实践\",\"https://web.dev/articles/font-best-practices\"]]},\n {id:\"TTFB\",name:\"Time to First Byte 首字节时间\",cwv:false,good:\"≤ 0.8 s\",poor:\"> 1.8 s\",weight:\"不计分\",\n  what:\"从发起请求到收到 HTML 第一个字节的时间，包含重定向、DNS、连接、服务器渲染。\",\n  diagnose:[\"PSI Field 的 TTFB\",\"PSI → Document request latency\",\"Shopify Theme Inspector 查看 Liquid 渲染耗时\"],\n  causes:[[\"Liquid 慢\",\"大集合嵌套循环、过多 section、复杂过滤\"],[\"重定向\",\"地理/语言跳转 App、http→https、带尾斜杠的跳转\"],[\"地域\",\"用户离 CDN 节点远（Shopify 已在全球 CDN 上）\"]],\n  fixes:[\"简化 Liquid，避免在循环中遍历大集合\",\"首屏 URL 避免重定向\",\"地理/语言跳转改为提示条而非自动跳转\"],\n  code:\"{%- comment -%} 避免：{%- endcomment -%}\\n{% for product in collections.all.products %}…{% endfor %}\",\n  links:[[\"Optimize TTFB（web.dev）\",\"https://web.dev/articles/optimize-ttfb\"],[\"TTFB 指标说明\",\"https://web.dev/articles/ttfb\"],[\"Shopify 主题性能最佳实践\",\"https://shopify.dev/docs/storefronts/themes/best-practices/performance\"]]},\n {id:\"TBT\",name:\"Total Blocking Time 总阻塞时间\",cwv:false,good:\"≤ 200 ms\",poor:\"> 600 ms\",weight:\"30%（最高）\",\n  what:\"FCP 之后主线程上每个长任务超过 50 ms 部分的总和，是 INP 的实验室代理指标。\",\n  diagnose:[\"PSI → Reduce JavaScript execution time、3rd parties、Minimize main-thread work、Avoid long main-thread tasks\",\"DevTools Network → Block request domain 屏蔽某个 App 后重测，量化它的影响\"],\n  causes:[[\"第三方脚本\",\"监控、视频、营销、客服、风控 SDK（ReVive：Sentry 2.2 s CPU、Firework 1.8 s）\"],[\"全站加载\",\"只在某个模板用到的脚本在所有页面加载\"],[\"重复/旧代码\",\"多个 App 重复打包库、给现代浏览器发 polyfill\"]],\n  fixes:[\"删除不用的 App，清理残留代码和 App embeds\",\"按 template.name 条件加载脚本\",\"首屏以下组件进入视口再加载（IntersectionObserver）\",\"营销/客服脚本 requestIdleCallback 错峰加载\",\"监控 SDK 用精简包、低采样率\",\"像素迁移到 Customer events（Web Pixels）\"],\n  code:\"{%- if template.name == 'product' -%}\\n  <script src=\\\"{{ 'reviews.js' | asset_url }}\\\" defer><\\/script>\\n{%- endif -%}\",\n  links:[[\"TBT 指标说明\",\"https://web.dev/articles/tbt\"],[\"第三方 JavaScript 优化\",\"https://web.dev/articles/third-party-javascript\"],[\"优化长任务\",\"https://web.dev/articles/optimize-long-tasks\"]]},\n {id:\"SI\",name:\"Speed Index 速度指数\",cwv:false,good:\"≤ 3.4 s\",poor:\"> 5.8 s\",weight:\"10%\",\n  what:\"页面可见区域内容填充的速度，基于加载过程的逐帧截图计算。\",\n  diagnose:[\"PSI 报告顶部的加载过程缩略图\",\"DevTools Performance → Screenshots\"],\n  causes:[[\"首屏持续变化\",\"自动播放的首屏视频/轮播让画面一直“未完成”（ReVive 移动端 18.8 s，推断与此有关）\"],[\"首屏内容晚出现\",\"同 FCP/LCP 的原因\"]],\n  fixes:[\"首屏视频延后加载，先显示静态封面\",\"轮播首屏不自动切换或延迟自动播放\",\"按 FCP、LCP 的方法优化\"],\n  code:\"<video muted playsinline loop preload=\\\"none\\\" data-src=\\\"…\\\"><\/video>\",\n  links:[[\"Lighthouse 性能评分\",\"https://developer.chrome.com/docs/lighthouse/performance/performance-scoring\"]]},\n];\nconst R = [\n [\"官方 · 指标与方法\",\"Web Vitals 总览\",\"https://web.dev/articles/vitals\",\"Google 对 Core Web Vitals 的定义、阈值与测量方式\"],\n [\"官方 · 指标与方法\",\"最有效的 Core Web Vitals 优化\",\"https://web.dev/articles/top-cwv\",\"Chrome 团队按收益排序的优化建议，适合定优先级\"],\n [\"官方 · 指标与方法\",\"Lab 与 Field 数据为何不同\",\"https://web.dev/articles/lab-and-field-data-differences\",\"解释 PSI 分数与真实用户数据差异的来源\"],\n [\"官方 · 指标与方法\",\"用 Lighthouse 优化 Web Vitals\",\"https://web.dev/articles/optimize-vitals-lighthouse\",\"如何从 Lighthouse 报告定位到具体问题\"],\n [\"官方 · 指标与方法\",\"Learn Performance 课程\",\"https://web.dev/learn/performance\",\"web.dev 系统性性能课程，从基础到资源加载\"],\n [\"官方 · 指标与方法\",\"Lighthouse 性能评分\",\"https://developer.chrome.com/docs/lighthouse/performance/performance-scoring\",\"分数权重与计算方式\"],\n [\"官方 · 指标与方法\",\"back/forward cache\",\"https://web.dev/articles/bfcache\",\"让返回上一页瞬间打开\"],\n [\"官方 · 工具\",\"DevTools Performance 面板\",\"https://developer.chrome.com/docs/devtools/performance\",\"录制加载和交互，诊断 LCP/INP/CLS\"],\n [\"官方 · 工具\",\"Chrome UX Report (CrUX)\",\"https://developer.chrome.com/docs/crux\",\"PSI 真实用户数据的来源与 API\"],\n [\"官方 · 工具\",\"CrUX Vis\",\"https://cruxvis.withgoogle.com/\",\"查看真实用户数据的历史趋势\"],\n [\"官方 · 工具\",\"Lighthouse CI\",\"https://github.com/GoogleChrome/lighthouse-ci\",\"多次运行 + 阈值断言，防止性能回退\"],\n [\"官方 · 工具\",\"web-vitals JS 库\",\"https://github.com/GoogleChrome/web-vitals\",\"采集真实用户指标与归因\"],\n [\"Shopify\",\"主题性能最佳实践\",\"https://shopify.dev/docs/storefronts/themes/best-practices/performance\",\"Shopify 官方主题性能指南\"],\n [\"Shopify\",\"平台已提供的性能能力\",\"https://shopify.dev/docs/storefronts/themes/best-practices/performance/platform\",\"CDN、图片格式、缓存等平台层优化\"],\n [\"Shopify\",\"Section Rendering API\",\"https://shopify.dev/docs/api/section-rendering\",\"按需渲染购物车抽屉、菜单等区块\"],\n [\"Shopify\",\"image_tag 过滤器\",\"https://shopify.dev/docs/api/liquid/filters/image_tag\",\"响应式图片、loading、fetchpriority、preload 参数\"],\n [\"Shopify\",\"Shopify Performance\",\"https://performance.shopify.com/\",\"Shopify 官方性能站点：店铺性能数据与资源\"],\n [\"社区精选\",\"LCP subparts 详解\",\"https://www.debugbear.com/blog/lcp-subparts\",\"DebugBear：LCP 四个阶段各自的优化策略\"],\n [\"社区精选\",\"Core Web Vitals 与 SEO\",\"https://csswizardry.com/2023/07/core-web-vitals-for-search-engine-optimisation/\",\"Harry Roberts：CWV 对排名的真实影响\"],\n [\"社区精选\",\"Core Web Vitals 指南\",\"https://www.corewebvitals.io/\",\"按指标整理的实践文章合集\"],\n [\"社区精选\",\"Request Metrics 性能文章\",\"https://requestmetrics.com/web-performance/\",\"面向实践的性能优化教程\"],\n [\"社区精选\",\"SpeedCurve 博客\",\"https://www.speedcurve.com/blog/\",\"RUM 与性能预算的深度文章\"],\n [\"社区精选\",\"Calibre 博客\",\"https://calibreapp.com/blog/\",\"性能监控与优化案例\"],\n [\"中文\",\"MDN Web 性能（中文）\",\"https://developer.mozilla.org/zh-CN/docs/Web/Performance\",\"MDN 中文版性能文档\"],\n];\nfunction MetricPanel({m}) {\n  return (React.createElement('div', { className: \"flex flex-col gap-4 pt-4\"   ,}\n    , React.createElement('div', { className: \"flex flex-wrap gap-2 items-center\"   ,}\n      , React.createElement(Text, { size: 16, weight: \"semibold\",}, m.name)\n      , m.cwv ? React.createElement(Badge, null, \"Core Web Vital\"  ) : React.createElement(Badge, null, \"辅助指标\")\n    )\n    , React.createElement(StatsRow, null\n      , React.createElement(StatCard, null, React.createElement(StatCardCaption, null, \"良好\"), React.createElement(StatCardValue, null, React.createElement('span', { className: \"text-green\",}, m.good)))\n      , React.createElement(StatCard, null, React.createElement(StatCardCaption, null, \"差\"), React.createElement(StatCardValue, null, React.createElement('span', { className: \"text-red\",}, m.poor)))\n      , React.createElement(StatCard, null, React.createElement(StatCardCaption, null, \"Lighthouse 权重\" ), React.createElement(StatCardValue, null, m.weight))\n    )\n    , React.createElement(Text, { size: 14, className: \"text-secondary\",}, m.what)\n    , React.createElement('div', { className: \"grid gap-4 md:grid-cols-2\"  ,}\n      , React.createElement(CardContent, null, React.createElement(CardBody, null, React.createElement(Text, { size: 14, weight: \"semibold\",}, \"1. 在 PSI / DevTools 中怎么看\"     )\n        , React.createElement('ol', { className: \"list-decimal pl-5 mt-2 flex flex-col gap-1 text-sm\"      ,}, m.diagnose.map((d,i)=>React.createElement('li', { key: i,}, d)))))\n      , React.createElement(CardContent, null, React.createElement(CardBody, null, React.createElement(Text, { size: 14, weight: \"semibold\",}, \"3. Shopify 中怎么修\"  )\n        , React.createElement('ul', { className: \"list-disc pl-5 mt-2 flex flex-col gap-1 text-sm\"      ,}, m.fixes.map((d,i)=>React.createElement('li', { key: i,}, d)))))\n    )\n    , React.createElement(Text, { size: 14, weight: \"semibold\",}, \"2. 常见原因\" )\n    , React.createElement(Table, null, React.createElement(TableHeader, null, React.createElement(TableRow, null, React.createElement(TableHead, null, \"症状\"), React.createElement(TableHead, null, \"常见原因（含本次案例）\")))\n      , React.createElement(TableBody, null, m.causes.map((c,i)=>React.createElement(TableRow, { key: i,}, React.createElement(TableCell, null, React.createElement('span', { className: \"font-medium\",}, c[0])), React.createElement(TableCell, null, c[1])))))\n    , React.createElement(Text, { size: 14, weight: \"semibold\",}, \"示例代码\")\n    , React.createElement(CodeBlock, { code: m.code,} )\n    , React.createElement(Text, { size: 14, weight: \"semibold\",}, \"延伸阅读\")\n    , React.createElement('div', { className: \"flex flex-col gap-1 text-sm\"   ,}, m.links.map((l,i)=>React.createElement(ExternalLink, { key: i, href: l[1],}, l[0])))\n  ));\n}\nfunction Report() {\n  const cats = useMemo(()=>[\"全部\",...Array.from(new Set(R.map(r=>r[0])))],[]);\n  const [cat,setCat] = useState(\"全部\");\n  const rows = R.filter(r=>cat===\"全部\"||r[0]===cat);\n  return (React.createElement(PageLayout, { title: \"网站性能指标优化教程\", subtitle: \"按 LCP、INP、CLS、FCP、TTFB、TBT、SI 逐项讲清：怎么看、为什么慢、Shopify 中怎么修，并附精选外部教程。\"   , themeToggle: true,}\n    , React.createElement('div', { className: \"flex flex-col gap-6\"  ,}\n      , React.createElement(BannerCard, null, \"先看真实用户数据（PSI 顶部 Field / CrUX）判断哪个 Core Web Vital 不达标，再用实验室数据（Lighthouse）定位原因。三个 Core Web Vitals：LCP、INP、CLS，全部“良好”才算通过。\"           )\n      , React.createElement(Table, null, React.createElement(TableHeader, null, React.createElement(TableRow, null, React.createElement(TableHead, null, \"指标\"), React.createElement(TableHead, null, \"衡量\"), React.createElement(TableHead, null, \"良好\"), React.createElement(TableHead, null, \"差\"), React.createElement(TableHead, null, \"Lighthouse 权重\" )))\n        , React.createElement(TableBody, null, M.map(m=>React.createElement(TableRow, { key: m.id,}, React.createElement(TableCell, null, React.createElement('span', { className: \"font-medium\",}, m.id)), React.createElement(TableCell, null, m.what.split(\"，\")[0].replace(\"。\",\"\")), React.createElement(TableCell, null, React.createElement('span', { className: \"text-green\",}, m.good)), React.createElement(TableCell, null, React.createElement('span', { className: \"text-red\",}, m.poor)), React.createElement(TableCell, null, m.weight)))))\n      , React.createElement(TabsRoot, { defaultValue: \"LCP\",}\n        , React.createElement(TabsList, null, M.map(m=>React.createElement(Tab, { key: m.id, value: m.id,}, m.id)))\n        , M.map(m=>React.createElement(TabsPanel, { key: m.id, value: m.id,}, React.createElement(MetricPanel, { m: m,} )))\n      )\n      , React.createElement('div', { className: \"flex flex-col gap-3\"  ,}\n        , React.createElement(Text, { size: 18, weight: \"semibold\",}, \"精选外部教程（\", rows.length, \"）\")\n        , React.createElement(SegmentedControl, { value: cat, onValueChange: setCat,}, cats.map(c=>React.createElement(SegmentedControlItem, { key: c, value: c,}, c)))\n        , React.createElement(Table, null, React.createElement(TableHeader, null, React.createElement(TableRow, null, React.createElement(TableHead, null, \"分类\"), React.createElement(TableHead, null, \"教程\"), React.createElement(TableHead, null, \"适合用来\")))\n          , React.createElement(TableBody, null, rows.map((r,i)=>React.createElement(TableRow, { key: i,}, React.createElement(TableCell, null, React.createElement(Badge, null, r[0])), React.createElement(TableCell, null, React.createElement(ExternalLink, { href: r[2],}, r[1])), React.createElement(TableCell, null, r[3])))))\n      )\n      , React.createElement(Footnote, null, \"阈值来自 web.dev（Core Web Vitals 以 p75 判定），Lighthouse 权重为 v13。案例数据来自 2026-11-09 对 torraslife.com 与 reviveskincare.com 的 PageSpeed 测试，详见仓库 docs/03、docs/04。外部链接均于 2026-11-09 检查可访问。\"                   )\n    )\n  ));\n}\nrender(React.createElement(Report, null ))\n")</script>
+    </main>
+  </body>
+</html>
